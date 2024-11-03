@@ -1,0 +1,89 @@
+.novosti-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.novost {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.novost:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.novost h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.novost p {
+    color: #555;
+    font-size: 1em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.datum {
+    color: #888;
+    font-size: 0.9em;
+}
+.menu-icon {
+    display: none; /* Sakriveno po defaultu */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 14px 16px;
+}
+
+#menu-toggle {
+    display: none; /* Sakriveno po defaultu */
+}
+
+.menu-items {
+    display: flex; /* Prikazivanje po defaultu */
+    gap: 15px;
+}
+
+@media only screen and (max-width:768px) {
+    .menu-items {
+        display: none; /* Sakriveno na manjim ekranima */
+        flex-direction: column;
+        width: 100%;
+        background-color: grey;
+        position: absolute; /* Dodano za pozicioniranje */
+        top: 60px; /* Prilagodite ovu vrednost prema potrebi */
+    }
+
+    .menu-icon {
+        display: block; /* Prikazuje hamburger ikonu */
+    }
+
+    #menu-toggle:checked ~ .menu-items {
+        display: flex; /* Prikazuje meni kada je checkbox označen */
+    }
+
+    .topnav a {
+        display: none; /* Sakriva sve linkove */
+    }
+
+    .topnav a:first-of-type {
+        display: block; /* Prikazuje logo */
+    }
+
+    .menu-items a {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid #ddd;
+    }
+}

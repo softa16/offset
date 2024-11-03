@@ -1,0 +1,99 @@
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top:5%;
+    margin-bottom: 5%;
+}
+
+.team-member {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #eee;
+}
+
+.team-member h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+}
+
+.position {
+    color: grey;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.team-member p {
+    color: whitesmoke;
+    padding: 0 10px 15px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+.menu-icon {
+    display: none; /* Sakriveno po defaultu */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 14px 16px;
+}
+
+#menu-toggle {
+    display: none; /* Sakriveno po defaultu */
+}
+
+.menu-items {
+    display: flex; /* Prikazivanje po defaultu */
+    gap: 15px;
+}
+
+@media only screen and (max-width:768px) {
+    .menu-items {
+        display: none; /* Sakriveno na manjim ekranima */
+        flex-direction: column;
+        width: 100%;
+        background-color: grey;
+        position: absolute; /* Dodano za pozicioniranje */
+        top: 60px; /* Prilagodite ovu vrednost prema potrebi */
+    }
+
+    .menu-icon {
+        display: block; /* Prikazuje hamburger ikonu */
+    }
+
+    #menu-toggle:checked ~ .menu-items {
+        display: flex; /* Prikazuje meni kada je checkbox označen */
+    }
+
+    .topnav a {
+        display: none; /* Sakriva sve linkove */
+    }
+
+    .topnav a:first-of-type {
+        display: block; /* Prikazuje logo */
+    }
+
+    .menu-items a {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid #ddd;
+    }
+}
